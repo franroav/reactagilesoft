@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./HeroDetail.css";
 import { useHistory } from "react-router-dom";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 function HeroDetail(): JSX.Element {
   const [data, setData] = useState([{}]);
@@ -25,7 +28,7 @@ function HeroDetail(): JSX.Element {
 
   const peticionGet = async () => {
     await axios
-      .get(`http://157.245.138.232:9091/api/v1/test/superheroes/${id}`)
+      .get(`${process.env.REACT_APP_HEROE_URL}/superheroes/${id}`)
       .then((response) => {
         console.log(response);
         setData([response.data.data]);

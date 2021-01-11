@@ -4,7 +4,7 @@ import { Card } from "@material-ui/core";
 import axios from "axios";
 import "./Inicio.css";
 
-const baseUrl = "http://157.245.138.232:9091/api/v1/test/superheroes";
+const baseUrl = `${process.env.REACT_APP_HEROE_URL}/superheroes`;
 
 function Inicio(): JSX.Element {
   const [data, setData] = useState([]);

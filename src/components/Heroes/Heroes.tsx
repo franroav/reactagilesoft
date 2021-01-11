@@ -7,8 +7,11 @@ import { Card } from "@material-ui/core";
 import "bootstrap/dist/css/bootstrap.min.css";
 //import { Hero } from "../../model/Hero";
 import "./Heroes.css";
-const baseUrl = "http://157.245.138.232:9091/api/v1/test/superheroes";
+import dotenv from "dotenv";
+dotenv.config();
 
+//const baseUrl = "http://157.245.138.232:9091/api/v1/test/superheroes";
+const baseUrl = `${process.env.REACT_APP_HEROE_URL}/superheroes`;
 const columns = [
   { title: "ID", field: "id" },
   {
@@ -27,6 +30,8 @@ const columns = [
 
 function Heroes(): JSX.Element {
   const [data, setData] = useState([]);
+
+  console.log(process.env.REACT_APP_HEROE_URL);
 
   const peticionGetById = async () => {
     await axios
