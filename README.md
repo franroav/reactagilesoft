@@ -1,6 +1,4 @@
-## clone the Project
-
-## clone repository
+## Clone repository
 
 Open your terminal and go to the folder where you want to download to project. Then write in the console `git clone https://github.com/franroav/reactagilesoft.git`.
 
